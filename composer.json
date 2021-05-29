@@ -1,0 +1,14 @@
+{
+    "name": "raposinha-tech/fastdev",
+    "require-dev": {
+        "orchestra/testbench": "^6.18"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor de Paula",
+            "email": "principe.borodin@gmail.com"
+        }
+    ],
+    "require": {}
+}
