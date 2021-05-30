@@ -1,0 +1,26 @@
+name: PullRequest
+on:
+  pull_request:
+    types: [ opened ]
+jobs:
+  allow_pull_request:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [ 7.3, 7.4 , 8.x ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: npm install
+        run: npm install
+      - name: execute commitlint
+        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+      - name: composer install
+        run: composer install
+      - name: execute php testes
+        run: ./vendor/bin/phpunit --no-configuration tests
