@@ -28,4 +28,15 @@ class CalcTest extends TestCase
 		$expected = 2;
 		$this->assertEquals($expected, $calc->sub(4, 2));
 	}
+	
+	/**
+	 * @test
+	 *
+	 */
+	public function multiply_is_correct()
+	{
+		$calc = new Calc();
+		$expected = 8;
+		$this->assertEquals($expected, $calc->multiply(4, 2));
+	}
 }
