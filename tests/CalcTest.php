@@ -17,4 +17,15 @@ class CalcTest extends TestCase
 		$expected = 4;
 		$this->assertEquals($expected, $calc->sum(2, 2));
 	}
+	
+	/**
+	 * @test
+	 *
+	 */
+	public function sub_is_correct()
+	{
+		$calc = new Calc();
+		$expected = 2;
+		$this->assertEquals($expected, $calc->sub(4, 2));
+	}
 }

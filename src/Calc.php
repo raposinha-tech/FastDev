@@ -8,4 +8,9 @@ class Calc
 	{
 		return $a + $b;
 	}
+	
+	public function sub($a,$b)
+	{
+		return $a - $b;
+	}
 }
